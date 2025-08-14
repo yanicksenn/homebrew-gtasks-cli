@@ -8,7 +8,7 @@ class GtasksCli < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "."
-    bin.install "gtasks-cli" => "gtasks"
+    mv bin/"gtasks-cli", bin/"gtasks"
   end
 
   test do
