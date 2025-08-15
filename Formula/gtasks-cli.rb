@@ -7,8 +7,7 @@ class GtasksCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "."
-    mv bin/"gtasks-cli", bin/"gtasks"
+    system "go", "build", *std_go_args(output: bin/"gtasks", ldflags: "-s -w"), "."
   end
 
   test do
